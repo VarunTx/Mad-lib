@@ -38,8 +38,5 @@ server.post('/ITC505/lab-7/index.html', (req, res) => {
 });
 
 // Server setup
-let port = 80;
-if (process.argv[2] === 'local') {
-    port = 8080;
-}
-server.listen(port, () => console.log('Ready on localhost!'));
+const port = process.env.PORT || 8080;
+server.listen(port, () => console.log(`Server running on port ${port}`));
