@@ -1,51 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mad Libs - Space Adventure</title>
-    <link rel="stylesheet" href="/ITC505/lab-7/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/ITC505/lab-7/styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Space Adventure Mad Lib</h1>
-        <form action="/ITC505/lab-7/submit" method="POST">
-            <label for="noun">Enter a noun (e.g., planet):</label>
-            <input type="text" id="noun" name="noun" required>
+      <h1>Space Adventure Mad Lib</h1>
+      <form action="/ITC505/lab-7/submit" method="POST">
+        <label for="noun">Enter a noun (e.g., planet):</label>
+        <input type="text" id="noun" name="noun" required />
 
-            <label for="adjective">Enter an adjective (e.g., mysterious):</label>
-            <input type="text" id="adjective" name="adjective" required>
+        <label for="adjective">Enter an adjective (e.g., mysterious):</label>
+        <input type="text" id="adjective" name="adjective" required />
 
-            <label for="verb">Enter a verb (e.g., explore):</label>
-            <input type="text" id="verb" name="verb" required>
+        <label for="verb">Enter a verb (e.g., explore):</label>
+        <input type="text" id="verb" name="verb" required />
 
-            <label for="place">Enter a place (e.g., the galaxy):</label>
-            <input type="text" id="place" name="place" required>
+        <label for="place">Enter a place (e.g., the galaxy):</label>
+        <input type="text" id="place" name="place" required />
 
-            <label for="number">Enter a number (e.g., 7):</label>
-            <input type="text" id="number" name="number" required>
+        <label for="number">Enter a number (e.g., 7):</label>
+        <input type="text" id="number" name="number" required />
 
-            <button type="submit">Submit</button>
-        </form>
+        <button type="submit">Submit</button>
+      </form>
 
-        <div class="addendum">
-            <h2>Addendum</h2>
-            <p>During the implementation of this Mad Lib project, I encountered the following challenges and resolved them as follows:</p>
-            <ul>
-                <li><strong>Handling Form Data on the Server Side:</strong> At first, I was able to receive the form data with some complications in the storage and handling of the values. I fixed this by ensuring that I used <code>express.urlencoded({ extended: true })</code>, form data that is received is then passed.</li>
-                <li><strong>Route Conflict with Static Files:</strong> Static files also posed a problem together with defining custom routes in my server.js. I was able to rectify this by making sure that the static file routes were created before the custome routes.</li>
-                <li><strong>Preventing Empty Form Submissions:</strong> At first, I failed to handle blank forms correctly, which led to half-filled Mad Libs. I incorporated the form validation in the back end side in a way that none of the fields are left empty when the output is generated.</li>
-                <li><strong>Displaying Mad Lib Output Correctly:</strong> The issue was with string concatenation and as a result the output was coming out all mixed up. This I was able to solve by using string interpolation and also ensuring good HTML planning in terms of structure.</li>
-            </ul>
-        </div>
+      <div class="addendum">
+        <h2>Addendum</h2>
+        <p>
+          During the implementation of this Mad Lib project, I encountered the
+          following challenges and resolved them as follows:
+        </p>
+        <ul>
+          <li>
+            <strong>Handling Form Data on the Server Side:</strong> At first, I
+            was able to receive the form data with some complications in the
+            storage and handling of the values. I fixed this by ensuring that I
+            used <code>express.urlencoded({ extended: true })</code>, form data
+            that is received is then passed.
+          </li>
+          <li>
+            <strong>Route Conflict with Static Files:</strong> Static files also
+            posed a problem together with defining custom routes in my
+            server.js. I was able to rectify this by making sure that the static
+            file routes were created before the custome routes.
+          </li>
+          <li>
+            <strong>Preventing Empty Form Submissions:</strong> At first, I
+            failed to handle blank forms correctly, which led to half-filled Mad
+            Libs. I incorporated the form validation in the back end side in a
+            way that none of the fields are left empty when the output is
+            generated.
+          </li>
+          <li>
+            <strong>Displaying Mad Lib Output Correctly:</strong> The issue was
+            with string concatenation and as a result the output was coming out
+            all mixed up. This I was able to solve by using string interpolation
+            and also ensuring good HTML planning in terms of structure.
+          </li>
+        </ul>
+      </div>
     </div>
 
     <footer>
-        <p>Last updated: <span id="lastModified"></span></p>
+      <p>Last updated: <span id="lastModified"></span></p>
     </footer>
     <script type="text/javascript">
-        var x = document.lastModified;
-        document.getElementById('lastModified').textContent = x;
+      var x = document.lastModified;
+      document.getElementById("lastModified").textContent = x;
     </script>
-</body>
+  </body>
 </html>
