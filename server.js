@@ -12,10 +12,10 @@ const publicServedFilesPath = path.join(__dirname, 'public');
 server.use(express.static(publicServedFilesPath));
 
 // Handle POST requests for the Mad Lib
-server.post('/ITC505/lab-7/index.html', (req, res) => {
-    const { adjective, pluralNoun, verb, planet, occupation } = req.body;
+server.post('/ITC505/lab-7/submit', (req, res) => {  // Updated route to match form action
+    const { noun, adjective, verb, place, number } = req.body;
 
-    if (!adjective || !pluralNoun || !verb || !planet || !occupation) {
+    if (!noun || !adjective || !verb || !place || !number) {
         res.send(`
             <h1>Submission Failed</h1>
             <p>Please fill out ALL fields</p>
@@ -25,9 +25,9 @@ server.post('/ITC505/lab-7/index.html', (req, res) => {
     }
 
     const madLib = `
-        In the ${adjective} expanse of space, a group of brave ${pluralNoun} decided to ${verb}.
-        Their destination? The mysterious planet ${planet}. 
-        Leading the mission was a skilled ${occupation} with a knack for adventure!
+        In the ${adjective} expanse of space, a group of brave ${noun}s decided to ${verb}.
+        Their destination? ${place}, which is ${number} light years away. 
+        Leading the mission was a skilled ${noun} with a knack for adventure!
     `;
 
     res.send(`
