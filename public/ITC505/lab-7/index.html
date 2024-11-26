@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space-Themed Mad Lib</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mad Libs - Space Adventure</title>
+    <link rel="stylesheet" href="/ITC505/lab-7/styles.css">
 </head>
 <body>
-    <h1>Space - Mad Lib</h1>
-    <form method="POST" action="/ITC505/lab-7/index.html">
-        <label for="adjective">Adjective:</label>
-        <input type="text" id="adjective" name="adjective" required><br>
+    <div class="container">
+        <h1>Space Adventure Mad Lib</h1>
+        <form action="/ITC505/lab-7/submit" method="POST">
+            <label for="noun">Enter a noun (e.g., planet):</label>
+            <input type="text" id="noun" name="noun" required>
 
-        <label for="pluralNoun">Plural Noun:</label>
-        <input type="text" id="pluralNoun" name="pluralNoun" required><br>
+            <label for="adjective">Enter an adjective (e.g., mysterious):</label>
+            <input type="text" id="adjective" name="adjective" required>
 
-        <label for="verb">Verb:</label>
-        <input type="text" id="verb" name="verb" required><br>
+            <label for="verb">Enter a verb (e.g., explore):</label>
+            <input type="text" id="verb" name="verb" required>
 
-        <label for="planet">Name of a Planet:</label>
-        <input type="text" id="planet" name="planet" required><br>
+            <label for="place">Enter a place (e.g., the galaxy):</label>
+            <input type="text" id="place" name="place" required>
 
-        <label for="occupation">Occupation:</label>
-        <input type="text" id="occupation" name="occupation" required><br>
+            <label for="number">Enter a number (e.g., 7):</label>
+            <input type="text" id="number" name="number" required>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="addendum">
+            <h2>Challenges & Resolutions</h2>
+            <p>During the implementation of this Mad Lib project, I encountered the following challenges and resolved them as follows:</p>
+            <ul>
+                <li><strong>Handling Form Data on the Server Side:</strong> I initially struggled to retrieve and process the form data properly. I fixed this by ensuring that I used <code>express.urlencoded({ extended: true })</code> to parse the form data correctly.</li>
+                <li><strong>Route Conflict with Static Files:</strong> There was a conflict between serving static files and defining custom routes in my <code>server.js</code>. I fixed this by ensuring that static file routes were defined before custom routes.</li>
+                <li><strong>Preventing Empty Form Submissions:</strong> Initially, I didn't handle empty form submissions well, resulting in incomplete Mad Libs. I added form validation in the backend to ensure all fields were filled before generating the output.</li>
+                <li><strong>Displaying Mad Lib Output Correctly:</strong> The output wasn't rendering correctly due to improper string concatenation. I resolved this by using string interpolation and improving the HTML structure for better readability.</li>
+            </ul>
+        </div>
+    </div>
+
     <footer>
-        <p>Last updated: 
-            <span id="lastModified"></span>
-        </p>
+        <p>Last updated: <span id="lastModified"></span></p>
     </footer>
     <script type="text/javascript">
         var x = document.lastModified;

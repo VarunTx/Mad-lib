@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Body styling with space background */
 body {
     font-family: Arial, sans-serif;
@@ -79,6 +80,15 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+/* Addendum section styling */
+.addendum {
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
 }
 
 /* Footer styling */
