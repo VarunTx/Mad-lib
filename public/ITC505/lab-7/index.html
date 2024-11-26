@@ -29,13 +29,13 @@
         </form>
 
         <div class="addendum">
-            <h2>Challenges & Resolutions</h2>
+            <h2>Addendum</h2>
             <p>During the implementation of this Mad Lib project, I encountered the following challenges and resolved them as follows:</p>
             <ul>
-                <li><strong>Handling Form Data on the Server Side:</strong> I initially struggled to retrieve and process the form data properly. I fixed this by ensuring that I used <code>express.urlencoded({ extended: true })</code> to parse the form data correctly.</li>
-                <li><strong>Route Conflict with Static Files:</strong> There was a conflict between serving static files and defining custom routes in my <code>server.js</code>. I fixed this by ensuring that static file routes were defined before custom routes.</li>
-                <li><strong>Preventing Empty Form Submissions:</strong> Initially, I didn't handle empty form submissions well, resulting in incomplete Mad Libs. I added form validation in the backend to ensure all fields were filled before generating the output.</li>
-                <li><strong>Displaying Mad Lib Output Correctly:</strong> The output wasn't rendering correctly due to improper string concatenation. I resolved this by using string interpolation and improving the HTML structure for better readability.</li>
+                <li><strong>Handling Form Data on the Server Side:</strong> At first, I was able to receive the form data with some complications in the storage and handling of the values. I fixed this by ensuring that I used <code>express.urlencoded({ extended: true })</code>, form data that is received is then passed.</li>
+                <li><strong>Route Conflict with Static Files:</strong> Static files also posed a problem together with defining custom routes in my server.js. I was able to rectify this by making sure that the static file routes were created before the custome routes.</li>
+                <li><strong>Preventing Empty Form Submissions:</strong> At first, I failed to handle blank forms correctly, which led to half-filled Mad Libs. I incorporated the form validation in the back end side in a way that none of the fields are left empty when the output is generated.</li>
+                <li><strong>Displaying Mad Lib Output Correctly:</strong> The issue was with string concatenation and as a result the output was coming out all mixed up. This I was able to solve by using string interpolation and also ensuring good HTML planning in terms of structure.</li>
             </ul>
         </div>
     </div>
