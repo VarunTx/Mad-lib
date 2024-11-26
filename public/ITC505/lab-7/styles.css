@@ -1,39 +1,95 @@
+/* General reset for consistent rendering across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body styling with space background */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background: url('https://img.freepik.com/premium-photo/galaxy-nebula-abstract-space-background-endless-universe-with-stars-galaxies-outer-space_1108314-5682.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #e0e0e0;
     text-align: center;
     padding: 20px;
 }
 
+/* Centering content */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Styling the form */
 form {
-    background: #1f1f1f;
+    background: rgba(31, 31, 31, 0.9); /* Semi-transparent dark background */
     padding: 20px;
     border-radius: 8px;
-    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    text-align: left;
 }
 
+/* Labels for the form inputs */
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-input {
-    padding: 5px;
+/* Input fields */
+input[type="text"] {
+    padding: 8px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
+    border: 1px solid #6200ea;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
 }
 
+/* Input focus styling */
+input:focus {
+    outline: none;
+    border-color: #bb86fc;
+    box-shadow: 0 0 5px #bb86fc;
+}
+
+/* Submit button styling */
 button {
     background-color: #6200ea;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
 }
 
+/* Hover and active states for the button */
 button:hover {
     background-color: #3700b3;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Footer styling */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    background: rgba(31, 31, 31, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
 }
